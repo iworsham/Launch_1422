@@ -51,7 +51,7 @@ namespace CaddyShackMVC.Controllers
            // var newgolfBagId = golfBag.Id;
             return RedirectToAction("show", new { golfBagId = golfBag.Id });
         }
-        [Route("/golfbags/edit/{golfBagId:int}")]
+      //  [Route("/golfbags/edit/{golfBagId:int}")]
         public IActionResult Edit(int golfBagId)
         {
             var golfBag = _context.GolfBags.Find(golfBagId);
