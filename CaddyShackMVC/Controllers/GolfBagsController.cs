@@ -41,15 +41,15 @@ namespace CaddyShackMVC.Controllers
         {
             return View();
         }
-   
+
         [HttpPost]
-        public IActionResult Create(GolfBag golfBag)
+        public IActionResult Create(GolfBag golfBag,int golfBagId)
         {
 
             _context.GolfBags.Add(golfBag);
             _context.SaveChanges();
-            var newgolfBagId = golfBag.Id;
-            return RedirectToAction("show");
+           // var newgolfBagId = golfBag.Id;
+            return RedirectToAction("show", new { golfBagId = golfBag.Id });
         }
         [Route("/golfbags/edit/{golfBagId:int}")]
         public IActionResult Edit(int golfBagId)
